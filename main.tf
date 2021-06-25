@@ -90,6 +90,9 @@ resource "helm_release" "kong" {
           resources   = var.migrations_resources
         }
         replicaCount = var.enable_autoscaling ? var.autoscaling_min_replicas : var.replica_count
+        podSecurityPolicy = {
+          enabled = true
+        }
         autoscaling = {
           enabled     = var.enable_autoscaling
           minReplicas = var.autoscaling_min_replicas
