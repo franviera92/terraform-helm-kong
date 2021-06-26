@@ -35,7 +35,8 @@ resource "helm_release" "kong" {
     yamlencode(
       {
         image = {
-          repository  = "hub.docker.com/repository/docker/cfviera/kong"
+          registry = "hub.docker.com"
+          repository  = "cfviera/kong"
           tag         = "2.2.1-alpine"
           pullSecrets = var.reg_cred
         }
