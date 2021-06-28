@@ -37,7 +37,7 @@ resource "helm_release" "kong" {
         image = {
           registry = "hub.docker.com"
           repository  = "cfviera/kong"
-          tag         = "2.2.1-alpine"
+          tag         = "2.1-alpine"
           pullSecrets = var.reg_cred
         }
         waitImage = {
